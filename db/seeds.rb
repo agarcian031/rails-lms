@@ -10,7 +10,7 @@
 end 
 
 3.times do |i| 
-  Courses.create(name: "course #{i + 1}")
+  Course.create(name: "course #{i + 1}")
 end 
 
 # One course and two users: one teacher and one student. 
@@ -20,6 +20,3 @@ Enrollment.create(course_id: Course.first.id, user_id: User.first.id, role: "stu
 
 
 Enrollment.create(course_id: Course.first.id, user_id: User.last.id, role: "teacher")
-
-Course.first.users 
-User.first.courses
