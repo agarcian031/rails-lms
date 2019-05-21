@@ -5,3 +5,21 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+3.times do |i| 
+  User.create(first_name: "#{i + 1} first", last_name: "#{i + 1} last")
+end 
+
+3.times do |i| 
+  Courses.create(name: "course #{i + 1}")
+end 
+
+# One course and two users: one teacher and one student. 
+# 
+
+Enrollment.create(course_id: Course.first.id, user_id: User.first.id, role: "student")
+
+
+Enrollment.create(course_id: Course.first.id, user_id: User.last.id, role: "teacher")
+
+Course.first.users 
+User.first.courses
